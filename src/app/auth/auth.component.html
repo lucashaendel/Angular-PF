@@ -1,0 +1,28 @@
+<mat-card class="cardContainer">
+    <div class="iconContainer">
+        <mat-icon class="iconLogin"> account_circle_full</mat-icon>
+    </div>
+    <form [formGroup]="form" class="containerForm">
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput formControlName="name">
+            <mat-error *ngIf="form.controls['name'].hasError('required')">
+                El campo es obligatorio
+            </mat-error>
+            <mat-error *ngIf="form.controls['name']!.hasError('minlength')">
+                El campo debe tener al menos 4 caracteres
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error *ngIf="form.controls['password'].hasError('required')">
+                El campo es obligatorio
+            </mat-error>
+            <mat-error *ngIf="form.controls['password']!.hasError('minlength')">
+                El campo debe tener al menos 6 caracteres
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" type="button" (click)="logIn()" [disabled]="form.invalid || isLoggedIn">Ingresar</button>
+</mat-card>

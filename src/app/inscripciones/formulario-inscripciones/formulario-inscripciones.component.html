@@ -1,0 +1,17 @@
+<h2>Alumno {{alumno.nombre}}</h2>
+<mat-card>
+    <mat-list role="list" >
+        <h3>Cursos disponibles</h3>
+        <mat-list-item role="listitem" *ngFor="let curso of arrCursos" (click)="agregar(curso.nombre)" >
+            {{curso.nombre}} <mat-icon> arrow_right</mat-icon> <mat-divider></mat-divider>
+        </mat-list-item>
+       
+    </mat-list>
+    <mat-divider [vertical]="true"></mat-divider>
+    <mat-list role="list">
+        <h3>Cursos Anotados</h3>
+        <mat-list-item role="listitem" *ngFor="let anotado of alumno.inscripciones" (click)="quitar(anotado)">
+            <mat-icon>arrow_left</mat-icon> {{anotado}} <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</mat-card>

@@ -1,0 +1,23 @@
+.containerForm{
+    display: flex;
+    flex-direction: column;
+}
+.cardContainer{
+    max-width: 300px;
+    margin: auto;
+}
+
+button{
+    width: 100%;
+}
+
+.iconContainer{
+    display: flex;
+    justify-content: center;
+    .iconLogin{
+        width: 80px;
+        height: 80px;
+        font-size: 80px;
+        color: #3f51b5;
+    }
+}

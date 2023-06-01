@@ -1,0 +1,35 @@
+{
+    "estudiantes": [
+      {
+        "id": 1,
+        "nombre": "Luis",
+        "dni": "35150343",
+        "email": "luis@coder.com",
+        "tienePermisoAdmin": "false",
+        "inscripciones": [ "Angular"]
+      },
+      {
+        "id": 2,
+        "nombre": "Nicolas",
+        "dni": "35150123",
+        "email": "nicolas@coder.com",
+        "tienePermisoAdmin": "true",
+        "inscripciones": []
+      },
+      {
+        "id": 3,
+        "nombre": "Jose",
+        "dni": "38999343",
+        "email": "jose@coder.com",
+        "tienePermisoAdmin": "false",
+        "inscripciones": ["React"]
+      }
+    ],
+    "headers": [
+        "id", "nombre","dni", "email", "tienePermisoAdmin"
+    ],
+    "headersAbm": [
+        "id", "nombre","dni", "email", "tienePermisoAdmin","actions"
+    ]
+}
+

@@ -1,0 +1,31 @@
+<mat-card class="card">
+    <mat-form-field appearance="standard" class="filtroContainer">
+        <mat-label>Filtrar por nombre</mat-label>
+        <input matInput (keyup)="applicarFiltro($event)" placeholder="Filtro" #input>
+    </mat-form-field>
+    <div >
+        <mat-card class="encontrados" *ngFor="let stud of this.arrEncontrados">Se encontro el alumno {{stud.nombre}} en la posicion {{stud.id}}</mat-card>
+    </div>
+   
+</mat-card>
+
+<table mat-table [dataSource]="arrAlumnos" class="tableContainer" #table>
+
+    <ng-container [matColumnDef]="column" *ngFor="let column of encabezados ">
+       
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <div *ngIf="column!=='actions'; else myAction">
+            <td mat-cell *matCellDef="let element" > {{element[column]}} </td>
+        </div>
+        <ng-template #myAction>
+            <td mat-cell *matCellDef="let element" class="iconsActionContainer" >  
+                <mat-icon class="actionIconsEdit" (click)="editStudents(element)" >edit</mat-icon>
+                <mat-icon class="actionIconsDelete" (click)="deleteStudents(element)">delete</mat-icon>
+            </td>
+        </ng-template>
+          
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="encabezados"></tr>
+    <tr mat-row *matRowDef="let row; columns: encabezados;"></tr>
+</table>

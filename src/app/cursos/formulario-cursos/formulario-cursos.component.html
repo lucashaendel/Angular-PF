@@ -1,0 +1,43 @@
+<form [formGroup]="createForm" novalidate (ngSubmit)="onSubmit()" class="formStudents">
+    <mat-card >
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Nombre" formControlName="nombre">
+              <mat-error *ngIf="createForm.controls['nombre'].hasError('required')">
+                El nombre es <strong>requerido</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Fecha" formControlName="fecha">
+              <mat-error *ngIf="createForm.controls['fecha'].hasError('required')">
+                La fecha es <strong>requerida</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col contentButton">
+              <mat-form-field class="full-width2">
+                <input matInput placeholder="Categoria" formControlName="categoria">
+                <mat-error *ngIf="createForm.controls['categoria'].hasError('required')">
+                  La categoria es <strong>requerida</strong>
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="full-width2">
+                <input matInput placeholder="Clases" formControlName="clases">
+                <mat-error *ngIf="createForm.controls['clases'].hasError('required')">
+                  El numero de clases <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+               
+                <mat-card-actions class="full-width2">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="createForm.invalid || estaCreando" >Crear</button>
+                    <button mat-raised-button  type="reset">Reset</button>
+                  </mat-card-actions>
+            </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+</form>

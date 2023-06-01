@@ -1,0 +1,16 @@
+
+<div class="buttonContainer">
+    <!-- nombre de usuario
+    <button mat-button class="nameButton">{{nameUsers | uppercase}}</button>
+     -->
+     <!-- info para estudiantes -->
+     <button mat-button (click)="navigateTo('personal')" disabled="{{nombre==null }}">Mis Datos</button>
+     
+    <!-- info para administradores -->
+    <button mat-button (click)="navigateTo('alumnos')" disabled="{{nombre==null  ||  permiso=='true'}}">Alumnos</button>
+    <button mat-button (click)="navigateTo('cursos')"  disabled="{{nombre==null  ||  permiso=='true'}}">Cursos</button>
+    <button mat-button (click)="navigateTo('inscripciones')" disabled="{{nombre==null  ||  permiso=='true'}}">Inscripciones</button>
+
+    <button mat-button (click)="logout()" disabled="{{nombre==null}}">logOut</button>
+   
+</div>

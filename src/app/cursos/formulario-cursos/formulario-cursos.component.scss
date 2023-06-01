@@ -1,0 +1,23 @@
+.full-width{
+    width: 45%;
+    margin: 0 8px;
+}
+
+.full-width2{
+    width: 30%;
+    margin: 0 8px;
+}
+
+.contentButton{
+    display: flex;
+}
+
+.formStudents{
+    margin-top: 16px;
+    background-color: #F7F9F9;
+    
+    mat-card{
+        background-color: #F7F9F9 ;
+        box-shadow: none;
+    }
+}

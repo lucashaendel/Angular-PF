@@ -1,0 +1,15 @@
+<h1 [title]>MENU DE CURSOS</h1>
+<mat-progress-bar mode="indeterminate" *ngIf="(loading$  | async )"></mat-progress-bar>
+<mat-tab-group>
+    <mat-tab label="Listado">  
+        <app-listado-cursos [encabezados]="encabezados" ></app-listado-cursos>
+    </mat-tab>
+    <mat-tab label="Abm">  
+        <app-formulario-cursos (cursoAgregado)="agregarCurso($event)" 
+                                [cursoAActualizar]="cursoAActualizar"></app-formulario-cursos>
+        <app-listado-cursos [encabezados]="encabezadosABM" 
+                            (cursoParaEditar)="cursoAEditar($event)"
+                            (cursoParaEliminar)="cursoAEliminar($event)">
+        </app-listado-cursos>
+    </mat-tab>
+</mat-tab-group>

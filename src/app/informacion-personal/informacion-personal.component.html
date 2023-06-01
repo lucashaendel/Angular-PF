@@ -1,0 +1,24 @@
+<h1 appTitulo>Mis Datos Personales</h1>
+<mat-card class="informationContainer">
+    <img src="./../../../assets/misDatos.png" alt="">   
+    <app-formulario-actualizacion [estudianteAActualizar]="alumnoIngresado" (alumnoAgregado)="agregarAlumno($event)"></app-formulario-actualizacion>
+ 
+</mat-card>
+
+<h1 appTitulo>Mis Cursos Personales</h1>
+<mat-card class="cursosABM">
+    <mat-list role="list" >
+        <h3>Cursos disponibles</h3>
+        <mat-list-item role="listitem" *ngFor="let curso of arrCursos" (click)="agregar(curso.nombre)" >
+            {{curso.nombre}} <mat-icon> arrow_right</mat-icon> <mat-divider></mat-divider>
+        </mat-list-item>
+       
+    </mat-list>
+    <mat-divider [vertical]="true"></mat-divider>
+    <mat-list role="list">
+        <h3>Cursos Anotados</h3>
+        <mat-list-item role="listitem" *ngFor="let anotado of alumnoIngresado.inscripciones" (click)="quitar(anotado)">
+            <mat-icon>arrow_left</mat-icon> {{anotado}} <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</mat-card>
